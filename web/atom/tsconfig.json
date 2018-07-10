@@ -29,5 +29,8 @@
     "webpack",
     "jest",
     "src/setupTests.ts"
+  ],
+  "files": [
+    "node_modules/@types/react/index.d.ts"
   ]
 }
