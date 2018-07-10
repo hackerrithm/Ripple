@@ -17,6 +17,11 @@ export const incrementCounter = (delta: number): Action => ({
   delta,
 })
 
+export const decrementCounter = (curVal: number): Action => ({
+    type: 'DECREMENT_COUNTER',
+    curVal,
+  })
+
 export const resetCounter = (): Action => ({
   type: 'RESET_COUNTER',
 })

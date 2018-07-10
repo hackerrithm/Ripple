@@ -6,8 +6,8 @@ export type Value = { value: number }
 
 type ThunkAction<TQ, TS, TE, _Q, _S> =
   ({ type: TQ } & Q<_Q>)
-| ({ type: TS } & Q<_Q> & S<_S>)
-| ({ type: TE } & Q<_Q> & E)
+  | ({ type: TS } & Q<_Q> & S<_S>)
+  | ({ type: TE } & Q<_Q> & E)
 
 export type LoadCount = ThunkAction<
   'LOAD_COUNT_REQUEST',
@@ -15,7 +15,7 @@ export type LoadCount = ThunkAction<
   'LOAD_COUNT_ERROR',
   {},
   Value
->
+  >
 
 export type SaveCount = ThunkAction<
   'SAVE_COUNT_REQUEST',
@@ -23,13 +23,14 @@ export type SaveCount = ThunkAction<
   'SAVE_COUNT_ERROR',
   Value,
   {}
->
+  >
 
 export type Action =
   LoadCount
-| SaveCount
-| { type: 'INCREMENT_COUNTER', delta: number }
-| { type: 'RESET_COUNTER' }
+  | SaveCount
+  | { type: 'INCREMENT_COUNTER', delta: number }
+  | { type: 'DECREMENT_COUNTER', curVal: number }
+  | { type: 'RESET_COUNTER' }
 
 type _T = Action['type']
 

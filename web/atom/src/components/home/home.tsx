@@ -72,23 +72,23 @@ const styles = (theme: any) => ({
 const tutorialSteps = [
     {
         label: 'How to be happy :)',
-        imgPath: 'https://images3.alphacoders.com/187/187129.jpg',
+        imgPath: 'http://jonvilma.com/images/blue-abtsract-4.jpg',
     },
     {
         label: '1. Work with something that you like, like…',
-        imgPath: 'https://i.imgur.com/X3CPUeT.jpg',
+        imgPath: 'http://www.qygjxz.com/data/out/104/4503759-hd-desktop-wallpaper.jpg',
     },
     {
         label: '2. Keep your friends close to you and hangout with them',
-        imgPath: 'https://i.imgur.com/X3CPUeT.jpg',
+        imgPath: 'http://www.qygjxz.com/data/out/104/4503759-hd-desktop-wallpaper.jpg',
     },
     {
         label: '3. Travel everytime that you have a chance',
-        imgPath: 'https://i.imgur.com/X3CPUeT.jpg',
+        imgPath: 'http://7-themes.com/data_images/out/57/6964916-shelby-gt500.jpg',
     },
     {
         label: '4. And contribute to Material-UI :D',
-        imgPath: 'https://i.imgur.com/X3CPUeT.jpg',
+        imgPath: 'http://bdfjade.com/data/out/84/5898866-beautiful-picture.jpg',
     },
 ];
 
@@ -183,7 +183,6 @@ class Home extends React.Component<any, any, any> {
                         </div>
                     </Grid>
                     <Grid item={true} xs={12} sm={6}>
-                        {/* <CounterContainer /> */}
                         <Counter />
                     </Grid>
                     <Grid item={true} xs={12} sm={6}>

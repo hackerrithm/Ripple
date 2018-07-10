@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 
 import {
   incrementCounter,
+  decrementCounter,
   //loadCount,
   //saveCount,
-} from '../counter'
+} from '../../app/counter/index'
 
 import { compose } from '../../utils'
 import * as state from '../../app/counter/reducer'
@@ -30,6 +31,7 @@ type ConnectedState = LoadingState & {
 
 type ConnectedDispatch = {
   increment: (n: number) => void
+  decrement: (n: number) => void
   //save: (n: number) => void
   //load: () => void
 }
@@ -44,6 +46,8 @@ const mapStateToProps = (state: state.All, ownProps: OwnProps): ConnectedState =
 const mapDispatchToProps = (dispatch: redux.Dispatch<state.All>): ConnectedDispatch => ({
   increment: (n: number) =>
     dispatch(incrementCounter(n)),
+  decrement: (n: number) => 
+    dispatch(decrementCounter(n))
   //load: () =>
   //dispatch(loadCount({})),
   //save: (value: number) =>
@@ -55,6 +59,11 @@ class PureCounter extends React.Component<ConnectedState & ConnectedDispatch & O
   _onClickIncrement = (e: any) => {
     e.preventDefault()
     this.props.increment(1)
+  }
+
+  _onClickDecrement = (e: any) => {
+    e.preventDefault()
+    this.props.decrement(1)
   }
 
   _onClickSave = (e: React.SyntheticEvent<HTMLButtonElement>) => {
@@ -80,9 +89,14 @@ class PureCounter extends React.Component<ConnectedState & ConnectedDispatch & O
       <form>
         <div className="basic-padding">
           <label>Increase: </label>
-          {/* <button onClick={() => props.handleIncrease(1)}>+</button> */}
           <Button variant="contained" color="primary" onClick={this._onClickIncrement}>
             +
+          </Button>
+        </div>
+        <div className="basic-padding">
+          <label>Decrease: </label>
+          <Button variant="contained" color="secondary" onClick={this._onClickDecrement}>
+            -
           </Button>
         </div>
         {/* <button ref='increment' onClick={this._onClickIncrement}>click me!</button> */}
