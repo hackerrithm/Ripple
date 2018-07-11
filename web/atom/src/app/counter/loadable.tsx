@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 // `loadable` is curried to decouple an `isLoading` check from the details of
 // component implementation

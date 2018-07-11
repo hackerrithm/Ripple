@@ -1,20 +1,18 @@
+import classnames from 'classnames';
 import * as React from 'react';
 
 import {
-    Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid,
-    Paper, Typography, Card, CardHeader, Avatar, IconButton, CardMedia, CardContent, CardActions, Collapse
+    Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Dialog,
+    DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, IconButton, Paper, Typography
 } from '@material-ui/core';
-import spacing from '@material-ui/core/styles/spacing';
-import classnames from 'classnames';
-import withStyles from '@material-ui/core/styles/withStyles';
-import CounterContainer from '../counter/CounterContainer';
-import { default as FavoriteIcon } from '@material-ui/icons/Favorite';
-import { default as ShareIcon } from '@material-ui/icons/Share';
-import { default as ExpandMoreIcon } from '@material-ui/icons/ExpandMore';
-import { default as MoreVertIcon } from '@material-ui/icons/MoreVert';
-
-
 import red from '@material-ui/core/colors/red';
+import spacing from '@material-ui/core/styles/spacing';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { default as ExpandMoreIcon } from '@material-ui/icons/ExpandMore';
+import { default as FavoriteIcon } from '@material-ui/icons/Favorite';
+import { default as MoreVertIcon } from '@material-ui/icons/MoreVert';
+import { default as ShareIcon } from '@material-ui/icons/Share';
+
 
 const styles = (theme: any) => ({
     flex: {
@@ -106,7 +104,7 @@ class About extends React.Component<any, any, any> {
                         </div>
                     </Grid>
                     <Grid item={true} xs={12} sm={6}>
-                        <CounterContainer />
+                        {/* <CounterContainer /> */}
                     </Grid>
                     <Grid item={true} xs={12} sm={6}>
                         ignored

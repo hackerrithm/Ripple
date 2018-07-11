@@ -76,7 +76,7 @@ class Navigation extends React.Component<any, any, any> {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="title" color="inherit" className={classes.flex}>
-                            Title
+                            Reacthead
                         </Typography>
                         <Button color="inherit">Login</Button>
                         {/* <div>

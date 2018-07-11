@@ -1,14 +1,8 @@
-import { api } from '../../api'
-
 import {
-  Action,
-  LoadCount,
-  SaveCount,
-  dispatcher,
-  asReq,
-  asRes,
-  asErr,
-} from '../../app/counter/actions'
+    Action, asErr, asReq, asRes, dispatcher, LoadCount, SaveCount
+} from '../../app/counter/actions';
+import { api } from './api';
+
 
 export { Action }
 

@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux'
-import { Action } from './actions';
+import { combineReducers } from 'redux';
 
+import { Action } from './actions';
 
 export type Counter = { value: number }
 
