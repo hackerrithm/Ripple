@@ -5,9 +5,13 @@ import thunk from 'redux-thunk';
 import './App.css';
 import reducers, * as state from './app/counter/reducer';
 import Home from './components/home/home';
+import About from './components/about/about';
+import Login from './components/login/login';
+import SignUp from './components/signup/signup';
+import Tools from './components/tools/tools';
 import { default as Navigation } from './components/navigation/navigation';
 import withRoot from './withRoot';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const store: redux.Store<state.All> = redux.createStore(
   reducers,
@@ -15,11 +19,10 @@ const store: redux.Store<state.All> = redux.createStore(
   redux.applyMiddleware(thunk),
 )
 
-const Root = () => {
+const NavBar = () => {
   return (
     <div>
       <Navigation />
-      <Home />
     </div>
   )
 }
@@ -27,7 +30,27 @@ const Root = () => {
 export const App: React.SFC<{}> = (_props) => {
   return (
     <Provider store={store}>
-      <Root />
+      <Router>
+        <div>
+          <NavBar />
+          <Route exact path="/" component={Home} />
+          <Route strict path="/tools" component={Tools} />
+          <Route strict path="/about" component={About} />
+          <Route strict path="/login" component={Login} />
+          <Route strict path="/signup" component={SignUp} />
+          <Route path="/logs" render={() => <h1>Logs</h1>} />
+          <Route
+            path="/children"
+            children={({ match }) => {
+              if (match) {
+                return <h1>Children</h1>;
+              }
+              return null;
+            }}
+          />
+        </div>
+      </Router>
+      {/* <Root /> */}
     </Provider>
   );
 }

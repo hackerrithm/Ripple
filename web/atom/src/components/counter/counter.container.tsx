@@ -54,6 +54,10 @@ const mapDispatchToProps = (dispatch: redux.Dispatch<state.All>): ConnectedDispa
 
 class PureCounter extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, {}> {
 
+  componentDidMount()  {
+    console.log('this is counter');
+  }
+
   _onClickIncrement = (e: any) => {
     e.preventDefault()
     this.props.increment(1)

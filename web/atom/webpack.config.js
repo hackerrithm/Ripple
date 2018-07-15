@@ -16,6 +16,7 @@ module.exports = {
             title: 'Phoenix',
             template: path.join('./public/index.html'),
         }),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     // Tell Webpack which JS files to load
     resolve: {
@@ -24,12 +25,10 @@ module.exports = {
     // Setup our Webpack Loader
     // TS files will pass through ts-loader and then go through Babel
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(ts|tsx)?$/,
                 exclude: path.join(__dirname, './node_modules'),
-                use: [
-                    {
+                use: [{
                         loader: 'babel-loader',
                         options: {
                             cacheDirectory: true,
@@ -55,5 +54,8 @@ module.exports = {
         inline: true,
         host: process.env.HOST,
         port: 9000,
+        historyApiFallback: true,
+        contentBase: './',
+        hot: true
     },
 };

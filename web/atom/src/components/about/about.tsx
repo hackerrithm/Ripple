@@ -1,197 +1,122 @@
-import classnames from 'classnames';
 import * as React from 'react';
 
 import {
-    Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Dialog,
-    DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, IconButton, Paper, Typography
+    Grid, AppBar, Tabs, Tab, Typography
 } from '@material-ui/core';
-import red from '@material-ui/core/colors/red';
-import spacing from '@material-ui/core/styles/spacing';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { default as ExpandMoreIcon } from '@material-ui/icons/ExpandMore';
+import { default as Company } from './company';
+import { default as PhoneIcon } from '@material-ui/icons/Phone';
 import { default as FavoriteIcon } from '@material-ui/icons/Favorite';
-import { default as MoreVertIcon } from '@material-ui/icons/MoreVert';
-import { default as ShareIcon } from '@material-ui/icons/Share';
+import { default as PersonPinIcon } from '@material-ui/icons/PersonPin';
+import { default as HelpIcon } from '@material-ui/icons/Help';
+import { default as ShoppingBasket } from '@material-ui/icons/ShoppingBasket';
+import { default as ThumbDown } from '@material-ui/icons/ThumbDown';
+import { default as ThumbUp } from '@material-ui/icons/ThumbUp';
+
+function TabContainer(props: any) {
+    return (
+        <Typography component="div" style={{ padding: 8 * 3 }}>
+            {props.children}
+        </Typography>
+    );
+}
 
 
 const styles = (theme: any) => ({
     flex: {
         flex: 1,
     },
-    menuButton: {
-        marginLeft: -12,
-        marginRight: 20,
-    },
     root: {
         flexGrow: 1,
-        paddingTop: spacing.unit * 1,
-    },
-    card: {
-        maxWidth: 400,
-    },
-    media: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
-    },
-    actions: {
-        display: 'flex',
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-        marginLeft: 'auto',
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    avatar: {
-        backgroundColor: red[500],
+        width: '100%',
+        backgroundColor: theme.palette.background.paper,
     },
 });
 
-class About extends React.Component<any, any, any> {
+type OwnProps = {
+    name: string;
+    value: number,
+    color: String
+}
 
-    public state = {
-        open: false,
-        activeStep: 0,
-        expanded: false
+class About extends React.Component<any, OwnProps, any> {
+
+    constructor(props: OwnProps) {
+        super(props)
+        this.state = {
+            name: '',
+            value: 0,
+            color: 'select a color',
+        };
+
+        this.changeColor = this.changeColor.bind(this);
+    }
+
+
+
+    handleChange = (event: any, value: any) => {
+        this.setState({ value });
+        // this.setState({  })
     };
 
-    public handleClose = () => {
+    public changeColor = (newColor: String) => {
         this.setState({
-            open: false,
-        });
-    };
-
-    public handleClick = () => {
-        this.setState({
-            open: true,
-        });
-    };
-
-    handleExpandClick = () => {
-        this.setState((state: any) => ({ expanded: !state.expanded }));
-    };
+            color: newColor
+        })
+    }
 
 
     render() {
         const { classes } = this.props;
-        const { open } = this.state;
+        const { value, color } = this.state;
 
         return (
-            <div>
 
+            <div>
+                <br />
                 {/* Main page */}
                 <Grid container={true}>
-                    <Grid item={true} xs={12}>
+                    <Grid item={true} xs={1} sm={1}>
+
+                    </Grid>
+                    <Grid item={true} xs={10} sm={10}>
                         <div className={classes.root}>
-                            <Dialog open={open} onClose={this.handleClose}>
-                                <DialogTitle>Super Secret Password</DialogTitle>
-                                <DialogContent>
-                                    <DialogContentText>1-2-3-4-5</DialogContentText>
-                                </DialogContent>
-                                <DialogActions>
-                                    <Button color="primary" onClick={this.handleClose}>
-                                        OK
-                                    </Button>
-                                </DialogActions>
-                            </Dialog>
-                            <Button variant="contained" color="secondary" onClick={this.handleClick}>
-                                Super Secret Password
-                            </Button>
+                            <AppBar position="static" color="default">
+                                <Tabs
+                                    value={value}
+                                    onChange={this.handleChange}
+                                    scrollable
+                                    scrollButtons="on"
+                                    indicatorColor="primary"
+                                    textColor="primary"
+                                >
+                                    <Tab label="Item One" icon={<PhoneIcon />} />
+                                    <Tab label="Item Two" icon={<FavoriteIcon />} />
+                                    <Tab label="Item Three" icon={<PersonPinIcon />} />
+                                    <Tab label="Item Four" icon={<HelpIcon />} />
+                                    <Tab label="Item Five" icon={<ShoppingBasket />} />
+                                    <Tab label="Item Six" icon={<ThumbDown />} />
+                                    <Tab label="Item Seven" icon={<ThumbUp />} />
+                                </Tabs>
+                            </AppBar>
+                            {value === 0 && <TabContainer>Item One</TabContainer>}
+                            {value === 1 && <TabContainer>Item Two</TabContainer>}
+                            {value === 2 && <TabContainer>Item Three</TabContainer>}
+                            {value === 3 && <TabContainer>Item Four</TabContainer>}
+                            {value === 4 && <TabContainer>Item Five</TabContainer>}
+                            {value === 5 && <TabContainer>Item Six</TabContainer>}
+                            {value === 6 && <TabContainer>Item Seven</TabContainer>}
+                        </div>
+                        <div className="parent-component">
+                            <header className="header">
+                                <h4>Parent Component</h4>
+                                <p>{color}</p>
+                            </header>
+                            <Company changeColor={this.changeColor} />
                         </div>
                     </Grid>
-                    <Grid item={true} xs={12} sm={6}>
-                        {/* <CounterContainer /> */}
-                    </Grid>
-                    <Grid item={true} xs={12} sm={6}>
-                        ignored
-                    </Grid>
-                    <Grid item={true} xs={6} sm={4}>
-                        <div>
-                            <Card className={classes.card}>
-                                <CardHeader
-                                    avatar={
-                                        <Avatar aria-label="Recipe" className={classes.avatar}>
-                                            R
-                                        </Avatar>
-                                    }
-                                    action={
-                                        <IconButton>
-                                            <MoreVertIcon />
-                                        </IconButton>
-                                    }
-                                    title="Shrimp and Chorizo Paella"
-                                    subheader="September 14, 2016"
-                                />
-                                <CardMedia
-                                    className={classes.media}
-                                    image="/static/images/cards/paella.jpg"
-                                    title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                    <Typography component="p">
-                                        This impressive paella is a perfect party dish and a fun meal to cook together with
-                                        your guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                                    </Typography>
-                                </CardContent>
-                                <CardActions className={classes.actions} disableActionSpacing>
-                                    <IconButton aria-label="Add to favorites">
-                                        <FavoriteIcon />
-                                    </IconButton>
-                                    <IconButton aria-label="Share">
-                                        <ShareIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        className={classnames(classes.expand, {
-                                            [classes.expandOpen]: this.state.expanded,
-                                        })}
-                                        onClick={this.handleExpandClick}
-                                        aria-expanded={this.state.expanded}
-                                        aria-label="Show more"
-                                    >
-                                        <ExpandMoreIcon className="material-icons" />
-                                    </IconButton>
-                                </CardActions>
-                                <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                                    <CardContent>
-                                        <Typography paragraph variant="body2">
-                                            Method:
-                            </Typography>
-                                        <Typography paragraph>
-                                            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-                                            minutes.
-                            </Typography>
-                                        <Typography paragraph>
-                                            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-                                            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-                                            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
-                                            chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
-                                            salt and pepper, and cook, stirring often until thickened and fragrant, about 10
-                                            minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-                            </Typography>
-                                        <Typography paragraph>
-                                            Add rice and stir very gently to distribute. Top with artichokes and peppers, and
-                                            cook without stirring, until most of the liquid is absorbed, 15 to 18 minutes.
-                                            Reduce heat to medium-low, add reserved shrimp and mussels, tucking them down into
-                                            the rice, and cook again without stirring, until mussels have opened and rice is
-                                            just tender, 5 to 7 minutes more. (Discard any mussels that don’t open.)
-                            </Typography>
-                                        <Typography>
-                                            Set aside off of the heat to let rest for 10 minutes, and then serve.
-                            </Typography>
-                                    </CardContent>
-                                </Collapse>
-                            </Card>
-                        </div>
-                    </Grid>
-                    <Grid item={true} xs={6} sm={4}>
-                        <Paper className={classes.paper}>xs=6 sm=3</Paper>
-                    </Grid>
-                    <Grid item={true} xs={6} sm={4}>
-                        <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                    <Grid item={true} xs={1} sm={1}>
+
                     </Grid>
 
                 </Grid>
