@@ -1,16 +1,10 @@
-import { Button } from '@material-ui/core';
 import * as React from 'react';
-import { CounterContainerState } from './counter.container';
 
-interface CounterViewProps {
-  handleDecrease: (num: any) => void;
-  handleIncrease: (num: any) => void; //Define a function expecting a parameter
-}
+import { Button } from '@material-ui/core';
 
-interface ComponentProps extends CounterContainerState, CounterViewProps { }
+import { IComponentProps } from './types';
 
-
-const CounterView = (props: ComponentProps): JSX.Element => {
+const CounterView = (props: IComponentProps): JSX.Element => {
   return (
     <div>
       <div className='hero'>

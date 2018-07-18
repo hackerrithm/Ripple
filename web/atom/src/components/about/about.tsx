@@ -1,17 +1,16 @@
 import * as React from 'react';
 
-import {
-    Grid, AppBar, Tabs, Tab, Typography
-} from '@material-ui/core';
+import { AppBar, Grid, Tab, Tabs, Typography } from '@material-ui/core';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { default as Company } from './company';
-import { default as PhoneIcon } from '@material-ui/icons/Phone';
 import { default as FavoriteIcon } from '@material-ui/icons/Favorite';
-import { default as PersonPinIcon } from '@material-ui/icons/PersonPin';
 import { default as HelpIcon } from '@material-ui/icons/Help';
+import { default as PersonPinIcon } from '@material-ui/icons/PersonPin';
+import { default as PhoneIcon } from '@material-ui/icons/Phone';
 import { default as ShoppingBasket } from '@material-ui/icons/ShoppingBasket';
 import { default as ThumbDown } from '@material-ui/icons/ThumbDown';
 import { default as ThumbUp } from '@material-ui/icons/ThumbUp';
+
+import { default as Company } from './company';
 
 function TabContainer(props: any) {
     return (

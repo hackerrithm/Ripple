@@ -1,11 +1,9 @@
 import * as React from 'react';
 
-import {
-    Grid
-} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
+
 import Calculator from '../calculator/calculator';
 import { Counter } from '../counter/counter.container';
-
 
 class Tools extends React.Component<any, any, any> {
 

@@ -2,16 +2,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import * as redux from 'redux';
 
-
-
 import { decrementCounter, incrementCounter } from '../../app/counter/index';
 import loadable from '../../app/counter/loadable';
 import * as state from '../../app/counter/reducer';
 import { compose } from '../../utils';
 import CounterView from './counter';
-
-type OwnProps = {
-}
+import { IOwnProps } from './types';
 
 type LoadingState = {
   isSaving: boolean,
@@ -24,15 +20,13 @@ type ConnectedState = LoadingState & {
 }
 
 type ConnectedDispatch = {
-  increment: (n: number) => void
-  decrement: (n: number) => void
+  increment: (n: any) => void
+  decrement: (n: any) => void
   //save: (n: number) => void
   //load: () => void
 }
 
-export interface CounterContainerState {
-  value: any
-}
+
 
 const mapStateToProps = (state: state.All): ConnectedState => ({
   counter: state.counter,
@@ -42,9 +36,9 @@ const mapStateToProps = (state: state.All): ConnectedState => ({
 })
 
 const mapDispatchToProps = (dispatch: redux.Dispatch<state.All>): ConnectedDispatch => ({
-  increment: (n: number) =>
+  increment: (n: any) =>
     dispatch(incrementCounter(n)),
-  decrement: (n: number) =>
+  decrement: (n: any) =>
     dispatch(decrementCounter(n))
   //load: () =>
   //dispatch(loadCount({})),
@@ -52,7 +46,7 @@ const mapDispatchToProps = (dispatch: redux.Dispatch<state.All>): ConnectedDispa
   //dispatch(saveCount({ value })),
 })
 
-class PureCounter extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, {}> {
+class PureCounter extends React.Component<ConnectedState & ConnectedDispatch & IOwnProps, {}> {
 
   componentDidMount()  {
     console.log('this is counter');

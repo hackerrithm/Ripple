@@ -1,18 +1,20 @@
+import classnames from 'classnames';
 import * as React from 'react';
 
 import {
-    Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid,
-    MobileStepper, Typography, Card, CardHeader, Avatar, IconButton, CardMedia, CardContent, CardActions, Collapse
+    Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Dialog,
+    DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, IconButton, MobileStepper,
+    Typography
 } from '@material-ui/core';
-import classnames from 'classnames';
+import { red } from '@material-ui/core/colors';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/icons";
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import { default as ExpandMoreIcon } from '@material-ui/icons/ExpandMore';
 // import CounterContainer from '../counter/CounterContainer';
 import { default as FavoriteIcon } from '@material-ui/icons/Favorite';
-import { default as ShareIcon } from '@material-ui/icons/Share';
-import { default as ExpandMoreIcon } from '@material-ui/icons/ExpandMore';
 import { default as MoreVertIcon } from '@material-ui/icons/MoreVert';
-import { red } from '@material-ui/core/colors';
+import { default as ShareIcon } from '@material-ui/icons/Share';
+
 // import { Counter } from '../counter/counter.container';
 
 const styles = (theme: any) => ({

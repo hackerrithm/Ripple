@@ -1,17 +1,19 @@
+import './App.css';
+
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
-import './App.css';
+
 import reducers, * as state from './app/counter/reducer';
-import Home from './components/home/home';
 import About from './components/about/about';
+import Home from './components/home/home';
 import Login from './components/login/login';
+import { default as Navigation } from './components/navigation/navigation';
 import SignUp from './components/signup/signup';
 import Tools from './components/tools/tools';
-import { default as Navigation } from './components/navigation/navigation';
 import withRoot from './withRoot';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const store: redux.Store<state.All> = redux.createStore(
   reducers,

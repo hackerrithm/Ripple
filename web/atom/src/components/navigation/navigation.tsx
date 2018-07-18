@@ -1,12 +1,12 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // import { Link } from 'react-router-dom';
-import { AppBar, Button, IconButton, Toolbar, Typography, Menu, MenuItem } from '@material-ui/core';
+import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from '@material-ui/core';
 import spacing from '@material-ui/core/styles/spacing';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { default as MenuIcon } from '@material-ui/icons/Menu';
-import { NavLink } from 'react-router-dom';
 import { AccountCircle } from '@material-ui/icons';
+import { default as MenuIcon } from '@material-ui/icons/Menu';
 
 const styles = (theme: any) => ({
     
