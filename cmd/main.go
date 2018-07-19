@@ -11,15 +11,11 @@ import (
 )
 
 func main() {
-	fmt.Println("hey")
-
 	session := StartDatabase()
 
 	f := SessionFactoryInitializer(session)
 
 	web.StartServer(f)
-
-	fmt.Println(f)
 }
 
 // StartDatabase starts the database with credentials
@@ -30,7 +26,7 @@ func StartDatabase() database.GORMDB {
 		panic(err.Error())
 	}
 
-	fmt.Println("Connected to database ")
+	fmt.Println("Connected to database:: ", session)
 
 	database.CreateCountry(session)
 	database.CreateState(session)
