@@ -89,7 +89,12 @@ func (u *user) register(w http.ResponseWriter, r *http.Request) error {
 		return err
 	}
 
-	RespondWithJSON(w, http.StatusOK, usr)
+	jwt, err := u.GenToken(usr, engine.AuthToken)
+	if err != nil {
+		return err
+	}
+
+	RespondWithJSON(w, http.StatusOK, response{jwt})
 
 	return nil
 }
