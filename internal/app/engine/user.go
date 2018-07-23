@@ -110,7 +110,7 @@ func (u *user) Activate(r *UserActivateRequest) error {
 
 	fmt.Println(user)
 
-	return err
+	return nil
 }
 
 func (u *user) Get(r uint /**domain.User*/) (*domain.User, error) {
@@ -190,12 +190,12 @@ func (u *user) getUserNameFromToken(token string, t TokenType) (string, error) {
 		return "", &TokenErr{fmt.Sprintf("invalid token type %v", t), false}
 	}
 
-	email, ok := claims["username"].(string)
+	username, ok := claims["username"].(string)
 	if !ok {
 		return "", fmt.Errorf("email can't get from token claims: %v", claims)
 	}
 
-	return email, nil
+	return username, nil
 }
 
 func (u *user) Show(r *ShowUserRequest) (*domain.User, error) {
