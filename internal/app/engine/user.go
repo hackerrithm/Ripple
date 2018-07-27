@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/domain"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/domain"
 )
 
 type (

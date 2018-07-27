@@ -3,7 +3,7 @@ package web
 import (
 	"net/http"
 
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
 )
 
 type (

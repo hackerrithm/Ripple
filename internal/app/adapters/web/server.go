@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
 )
 
 // StartServer starts the server

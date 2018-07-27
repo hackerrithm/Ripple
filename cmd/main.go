@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/adapters/web"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
-	psqlrepo "github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/providers/postgres"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/shared/database"
-	"github.com/reacthead/quest/providers"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/adapters/web"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/providers"
+	psqlrepo "github.com/reacthead/hydrogen/kanna/ripple/internal/app/providers/postgres"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/shared/database"
 )
 
 func main() {

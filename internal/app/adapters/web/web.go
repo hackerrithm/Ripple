@@ -6,7 +6,7 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/justinas/alice"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
 )
 
 // NewWebAdapter handler for REST methods

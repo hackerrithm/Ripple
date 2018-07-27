@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	jwtgo "github.com/dgrijalva/jwt-go"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
 )
 
 // NewJWT returns jwt struct

@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/domain"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/domain"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
 )
 
 type (

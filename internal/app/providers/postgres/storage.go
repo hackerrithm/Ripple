@@ -1,6 +1,6 @@
 package postgres
 
-import "github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/shared/database"
+import "github.com/reacthead/hydrogen/kanna/ripple/internal/app/shared/database"
 
 type (
 	tableName string

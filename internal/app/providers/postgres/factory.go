@@ -3,8 +3,8 @@ package postgres
 import (
 	"sync"
 
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/shared/database"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/shared/database"
 )
 
 type (

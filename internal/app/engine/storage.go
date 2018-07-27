@@ -1,6 +1,6 @@
 package engine
 
-import "github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/domain"
+import "github.com/reacthead/hydrogen/kanna/ripple/internal/app/domain"
 
 type (
 

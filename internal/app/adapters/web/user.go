@@ -8,8 +8,8 @@ import (
 
 	"github.com/alioygur/gores"
 	"github.com/gorilla/mux"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/domain"
-	"github.com/reacthead/hydrogen/Kanna/Ripple/internal/app/engine"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/domain"
+	"github.com/reacthead/hydrogen/kanna/ripple/internal/app/engine"
 )
 
 type response struct {
@@ -115,9 +115,9 @@ func (u *user) login(w http.ResponseWriter, r *http.Request) error {
 		return err
 	}
 
-	RespondWithJSON(w, http.StatusOK /*usr*/, response{jwt})
+	return gores.JSON(w, http.StatusOK /*usr*/, response{jwt})
 
-	return nil
+	//return nil
 }
 
 func (u *user) edit(w http.ResponseWriter, r *http.Request) error {
